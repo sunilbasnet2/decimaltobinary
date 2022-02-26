@@ -1,0 +1,22 @@
+dec = int(input("Enter a decimal number. "))
+curr_dec = dec
+rem = 0
+octal = []
+num = 2
+while True:
+    if curr_dec % num == 0:
+        rem = 0
+        curr_dec = int(curr_dec/num)
+        octal.append(rem)
+    else:
+        if curr_dec < num:
+            octal.append(curr_dec)
+            break
+        rem = curr_dec % num
+        curr_dec = int(curr_dec/num)
+        octal.append(rem)
+
+octal = octal[::-1]
+x = [str(i) for i in octal ]
+x = "".join(x)
+print(x)
